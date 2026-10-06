@@ -3,31 +3,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Maitena Zanabria | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fa;
+            color: #20242a;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #111827;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            min-height: 80vh;
+            background: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 70px 10%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero .intro {
+            color: #9ca3af;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            color: #d1d5db;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #bfc5ce;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            background: white;
+            color: #111827;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid #6b7280;
+        }
+
+        section {
+            padding: 80px 10%;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            color: #606773;
+            max-width: 750px;
+            margin-bottom: 40px;
+        }
+
+        .about-text {
+            max-width: 850px;
+            font-size: 17px;
+            color: #4b5563;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .skill {
+            background: #e8eaee;
+            padding: 9px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #606773;
+            font-size: 15px;
+        }
+
+        .card .tech {
+            margin-top: 18px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        .process {
+            background: #eef0f3;
+        }
+
+        .process-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .process-step {
+            background: white;
+            padding: 22px;
+            border-radius: 8px;
+        }
+
+        .process-step span {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .process-step h3 {
+            margin-top: 5px;
+        }
+
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        footer h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Maitena Zanabria</h1>
+<nav>
+    <div class="logo">MZ.</div>
 
-    <h2>Técnica en Desarrollo de Software | Consultora IT</h2>
+    <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#tecnologias">Tecnologías</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
 
-    <p>
-        Desarrollo soluciones combinando SQL, aplicaciones web y soporte técnico,
-        orientadas a resolver necesidades reales de usuarios y empresas.
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <p class="intro">Hola, soy</p>
+
+        <h1>Maitena Zanabria</h1>
+
+        <h2>
+            Técnica en Desarrollo de Software · Consultora IT
+        </h2>
+
+        <p>
+            Desarrollo soluciones combinando bases de datos, aplicaciones web
+            y soporte técnico, con foco en resolver necesidades reales de
+            usuarios y empresas.
+        </p>
+
+        <a class="btn" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn-secondary" href="#contacto">Contacto</a>
+
+    </div>
+
+</header>
+
+
+<section id="sobre-mi">
+
+    <h2 class="section-title">Sobre mí</h2>
+
+    <p class="about-text">
+        Soy Técnica en Desarrollo de Software y actualmente me desempeño como
+        Consultora IT. Cuento con experiencia en soporte de sistemas de gestión,
+        resolución de incidencias y relevamiento de necesidades de clientes.
+        <br><br>
+        Mi trabajo también me permitió involucrarme en el desarrollo técnico:
+        creo consultas y reportes personalizados en SQL Server, realizo
+        mantenimiento y mejoras sobre aplicaciones web y participo en la
+        resolución de problemas relacionados con servidores y entornos de
+        aplicaciones.
+        <br><br>
+        Me interesa especialmente poder combinar el análisis de una necesidad
+        con la implementación de una solución concreta.
     </p>
 
-    <h2>Sobre mí</h2>
+</section>
 
-    <p>
-        Cuento con experiencia en soporte de sistemas de gestión, resolución de
-        incidencias, desarrollo de consultas y reportes en SQL Server, y desarrollo
-        y mantenimiento de aplicaciones web.
+
+<section id="tecnologias">
+
+    <h2 class="section-title">Tecnologías y herramientas</h2>
+
+    <p class="section-description">
+        Algunas de las tecnologías y herramientas con las que trabajo.
     </p>
 
-    <h2>Proyectos</h2>
+    <div class="skills">
+        <div class="skill">SQL Server</div>
+        <div class="skill">T-SQL</div>
+        <div class="skill">Python</div>
+        <div class="skill">Django</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Tableau</div>
+        <div class="skill">Git / GitHub</div>
+        <div class="skill">Windows</div>
+        <div class="skill">Linux</div>
+        <div class="skill">Apache</div>
+        <div class="skill">Sistemas ERP</div>
+    </div>
 
-    <p>Próximamente...</p>
+</section>
+
+
+<section id="proyectos">
+
+    <h2 class="section-title">Proyectos y experiencia técnica</h2>
+
+    <p class="section-description">
+        Algunos ejemplos de problemas y soluciones en los que trabajé.
+        Los casos laborales se presentan de manera anonimizada para proteger
+        la información de los clientes.
+    </p>
+
+    <div class="projects">
+
+        <div class="card">
+            <h3>Aplicaciones web de gestión</h3>
+
+            <p>
+                Desarrollo y mantenimiento de aplicaciones web orientadas
+                a procesos internos y logísticos, trabajando con Django,
+                Python y bases de datos.
+            </p>
+
+            <p class="tech">
+                Python · Django · SQL Server · HTML · CSS
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>Reportes y consultas SQL</h3>
+
+            <p>
+                Desarrollo de consultas, vistas y reportes personalizados
+                para analizar ventas, stock, pedidos, artículos, clientes
+                y movimientos dentro de sistemas de gestión.
+            </p>
+
+            <p class="tech">
+                SQL Server · T-SQL · CTE · JOIN · Vistas
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>Dashboards y análisis de datos</h3>
+
+            <p>
+                Construcción de dashboards interactivos para visualizar
+                indicadores y facilitar el análisis de información comercial.
+            </p>
+
+            <p class="tech">
+                Tableau · SQL · Análisis de datos
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>Soporte y resolución de incidencias</h3>
+
+            <p>
+                Investigación y resolución de problemas en aplicaciones,
+                servidores y sistemas de gestión, analizando errores,
+                configuraciones, servicios y permisos.
+            </p>
+
+            <p class="tech">
+                Windows · Linux · Apache · Django
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="process">
+
+    <h2 class="section-title">Cómo trabajo</h2>
+
+    <div class="process-container">
+
+        <div class="process-step">
+            <span>01</span>
+            <h3>Necesidad</h3>
+            <p>Comprender el problema o requerimiento del usuario.</p>
+        </div>
+
+        <div class="process-step">
+            <span>02</span>
+            <h3>Análisis</h3>
+            <p>Investigar datos, procesos y posibles causas.</p>
+        </div>
+
+        <div class="process-step">
+            <span>03</span>
+            <h3>Desarrollo</h3>
+            <p>Implementar la consulta, ajuste o solución necesaria.</p>
+        </div>
+
+        <div class="process-step">
+            <span>04</span>
+            <h3>Pruebas</h3>
+            <p>Validar el funcionamiento y los resultados obtenidos.</p>
+        </div>
+
+        <div class="process-step">
+            <span>05</span>
+            <h3>Implementación</h3>
+            <p>Entregar una solución funcional para el usuario.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer id="contacto">
+
+    <h2>Contacto</h2>
+
+    <p>
+        ¿Querés conocer más sobre mi experiencia o mis proyectos?
+    </p>
+
+    <p>
+        <a href="https://github.com/Maiitezanabria" target="_blank">
+            GitHub
+        </a>
+    </p>
+
+    <p>© 2026 Maitena Zanabria</p>
+
+</footer>
 
 </body>
 </html>
